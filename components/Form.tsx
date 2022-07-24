@@ -12,7 +12,7 @@ const Form = () => {
       const { user, error } = await supabase.auth.signIn({
         email: values.email,
         // password: values.password,
-      });
+      },{redirectTo:"https://turbonote.vercel.app"});
       error && alert(JSON.stringify(error));
       console.log({ userForm: user && user });
     },
